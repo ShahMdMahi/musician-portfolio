@@ -11,10 +11,11 @@ body {
   background-color: black;
   color: white;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 ::selection {
-  background-color: #FFD700;
+  background-color: #ffd700;
   color: black;
 }
 
@@ -39,4 +40,3 @@ body {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
-
