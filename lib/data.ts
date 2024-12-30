@@ -32,9 +32,24 @@ export const navItems = [
   { name: "New Releases", href: "#new-releases" },
   { name: "News", href: "#news" },
   { name: "Gallery", href: "#gallery" },
+  { name: "My Team", href: "#my-team" },
   { name: "Awards", href: "#awards" },
   { name: "Contact", href: "#contact" },
 ];
+
+export const aboutContent = {
+  title: "About Sakib Rafsan",
+  image: aboutImage,
+  description:
+    "Sakib Rafsan is an indie pop singer-songwriter and producer based in Los Angeles, California. With over a decade of experience in the music industry, John has crafted a unique sound that blends catchy melodies with introspective lyrics.",
+  achievements: [
+    "Released 3 critically acclaimed albums",
+    "Performed at major music festivals including Coachella and Glastonbury",
+    "Collaborated with renowned artists such as Taylor Swift and Ed Sheeran",
+  ],
+  quote:
+    "Music is not just my career, it's my passion and my way of connecting with the world.",
+};
 
 export const aboutStats = [
   { number: "10+", label: "Years Experience" },
@@ -132,4 +147,31 @@ export const socialLinks = [
   { name: "Youtube", href: "https://www.youtube.com", Icon: Youtube },
   { name: "Linkedin", href: "https://www.linkedin.com", Icon: Linkedin },
   { name: "Slack", href: "https://www.slack.com", Icon: Slack },
+];
+
+export const teamMembers = [
+  {
+    name: "Jane Doe",
+    role: "Lead Guitarist",
+    image: gallery.gp1,
+    bio: "Jane is a virtuoso guitarist with over 15 years of experience in various genres.",
+  },
+  {
+    name: "John Smith",
+    role: "Drummer",
+    image: gallery.gp2,
+    bio: "John's rhythmic precision and creativity have been the backbone of our sound for 8 years.",
+  },
+  {
+    name: "Emily Brown",
+    role: "Bassist",
+    image: gallery.gp3,
+    bio: "Emily's groovy bass lines and backing vocals add depth to our music.",
+  },
+  {
+    name: "Michael Lee",
+    role: "Keyboardist",
+    image: gallery.gp4,
+    bio: "Michael's versatility on keys brings a unique flavor to our arrangements.",
+  },
 ];

@@ -1,41 +1,46 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Music, X } from 'lucide-react'
-import { siteConfig, navItems } from "@/lib/data"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Music, X } from "lucide-react";
+import { siteConfig, navItems } from "@/lib/data";
+import Link from "next/link";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const target = document.querySelector(href)
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
     if (target) {
-      const headerOffset = 80
-      const elementPosition = target.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+      const headerOffset = 80;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
-      })
+        behavior: "smooth",
+      });
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   return (
     <motion.header
-      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+      className={`fixed top-0 w-full z-40 transition-colors duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-sm" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -44,15 +49,15 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
-          <a 
-            href="#home"
-            onClick={(e) => scrollToSection(e, "#home")}
+          <Link
+            href="/"
+            // onClick={(e) => scrollToSection(e, "/")}
             className="flex items-center text-yellow-400 text-xl font-bold hover:text-yellow-300 transition-colors"
           >
             <Music className="w-8 h-8 mr-2" />
             <span>{siteConfig.name}</span>
-          </a>
-          
+          </Link>
+
           <button
             className="lg:hidden z-50 relative"
             onClick={() => setIsOpen(!isOpen)}
@@ -109,6 +114,5 @@ export default function Header() {
         )}
       </AnimatePresence>
     </motion.header>
-  )
+  );
 }
-

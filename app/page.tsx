@@ -1,10 +1,11 @@
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import NewReleases from "@/components/new-releases"
-import Gallery from "@/components/gallery"
-import Awards from "@/components/awards"
-import Contact from "@/components/contact"
-import News from "@/components/news"
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import NewReleases from "@/components/new-releases";
+import Gallery from "@/components/gallery";
+import Awards from "@/components/awards";
+import Contact from "@/components/contact";
+import News from "@/components/news";
+import MyTeam from "@/components/my-team";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
       <div id="gallery">
         <Gallery />
       </div>
+      <div id="my-team">
+        <MyTeam />
+      </div>
       <div id="awards">
         <Awards />
       </div>
@@ -31,6 +35,5 @@ export default function Home() {
         <Contact />
       </div>
     </>
-  )
+  );
 }
-

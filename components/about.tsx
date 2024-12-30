@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { aboutStats, siteConfig } from "@/lib/data";
+import Link from "next/link";
 
 export default function About() {
   const ref = useRef(null);
@@ -35,10 +36,16 @@ export default function About() {
             <p className="text-gray-300 mb-6 leading-relaxed">
               {siteConfig.about1}
             </p>
-            <p className="text-gray-300 mb-8 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               {siteConfig.about2}
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <Link
+              href="/about"
+              className="bg-yellow-400 text-black px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors"
+            >
+              Read More
+            </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
               {aboutStats.map((stat, index) => (
                 <motion.div
                   key={stat.label}

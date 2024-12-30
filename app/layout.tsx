@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { siteConfig } from "../lib/data";
+import SmoothCursor from "../components/smooth-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="smooth-scroll">
       <body className={`${inter.className} min-h-screen bg-black text-white`}>
+        <SmoothCursor />
         <Header />
         <main>{children}</main>
         <Footer />

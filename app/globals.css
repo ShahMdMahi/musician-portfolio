@@ -11,7 +11,20 @@ body {
   background-color: black;
   color: white;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+}
+
+@media (min-width: 768px) {
+  a,
+  button,
+  [role="button"] {
+    cursor: none;
+  }
 }
 
 ::selection {
